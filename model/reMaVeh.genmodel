@@ -13,15 +13,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Aceite/ViscosidadSAEBajaTemperatura"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Aceite/ViscosidadSAEAltaTemperatura"/>
     </genClasses>
-    <genClasses ecoreClass="reMaVeh.ecore#//TargetMantenimiento">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Nombre"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Descripcion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/CodigoIdentificador"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//TargetMantenimiento/Marca"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//TargetMantenimiento/Cotizaciones"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//TargetMantenimiento/PeriodicidadesMantenimiento"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//TargetMantenimiento/Kits"/>
+    <genClasses ecoreClass="reMaVeh.ecore#//Repuesto">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Repuesto/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Repuesto/CodigoIdentificador"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Repuesto/Marca"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Repuesto/Cotizaciones"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Repuesto/PeriodicidadesMantenimiento"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Repuesto/Kits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Repuesto/TargetMantenimiento"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Automovil">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Automovil/Patente"/>
@@ -29,9 +28,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Automovil/Combustible"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Automovil/CodigoColorPintura"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Automovil/PresionNeumaticosRecomendada"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Automovil/TargetsMantenimiento"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Automovil/Airbags"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Automovil/AceiteRecomendado"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Automovil/RepuestosRecomendados"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Combustible">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Combustible/Id"/>
@@ -54,7 +52,7 @@
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Fluido"/>
     <genClasses ecoreClass="reMaVeh.ecore#//Kit">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Kit/TargetsMantenimiento"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Kit/Repuestos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Kit/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Kit/Nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Kit/Descripcion"/>
@@ -62,7 +60,7 @@
     <genClasses ecoreClass="reMaVeh.ecore#//Mantenimiento">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Mantenimiento/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Mantenimiento/Accion"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Mantenimiento/Pieza"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Mantenimiento/Repuesto"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Marca">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Marca/Id"/>
@@ -84,7 +82,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PeriodicidadMantenimiento/Dias"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PeriodicidadMantenimiento/Meses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PeriodicidadMantenimiento/Anios"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//PeriodicidadMantenimiento/TargetMantenimiento"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//PeriodicidadMantenimiento/Repuesto"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//PeriodicidadMantenimiento/ModeloVehiculo"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Pieza">
@@ -96,10 +94,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ServicioMecanico/FechaInicio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ServicioMecanico/FechaFin"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ServicioMecanico/Taller"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ServicioMecanico/Vehiculo"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Taller">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Taller/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Taller/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Taller/ServiciosMecanicos"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//UbicacionPieza">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//UbicacionPieza/Id"/>
@@ -121,6 +121,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Vehiculo/Kilometraje"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Vehiculo/Usuario"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Vehiculo/AnioFabricacion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Vehiculo/ServiciosMecanicos"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//TargetMantenimiento">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Descripcion"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

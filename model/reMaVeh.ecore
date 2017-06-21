@@ -7,22 +7,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ViscosidadSAEAltaTemperatura"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TargetMantenimiento" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Repuesto">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CodigoIdentificador" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" eType="#//Marca"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Cotizaciones" upperBound="-1"
         eType="#//Cotizacion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PeriodicidadesMantenimiento"
-        upperBound="-1" eType="#//PeriodicidadMantenimiento" eOpposite="#//PeriodicidadMantenimiento/TargetMantenimiento"/>
+        upperBound="-1" eType="#//PeriodicidadMantenimiento" eOpposite="#//PeriodicidadMantenimiento/Repuesto"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Kits" upperBound="-1" eType="#//Kit"
-        eOpposite="#//Kit/TargetsMantenimiento"/>
+        eOpposite="#//Kit/Repuestos"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TargetMantenimiento" lowerBound="1"
+        eType="#//TargetMantenimiento"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Automovil" eSuperTypes="#//Vehiculo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Patente" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -31,10 +29,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CodigoColorPintura" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PresionNeumaticosRecomendada"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TargetsMantenimiento" upperBound="-1"
-        eType="#//TargetMantenimiento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Airbags" eType="#//EquipamientoAirbags"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="AceiteRecomendado" eType="#//Aceite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RepuestosRecomendados"
+        upperBound="-1" eType="#//Repuesto"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Combustible">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -69,8 +66,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fluido" eSuperTypes="#//TargetMantenimiento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Kit">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TargetsMantenimiento" upperBound="-1"
-        eType="#//TargetMantenimiento" eOpposite="#//TargetMantenimiento/Kits"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Repuestos" lowerBound="1"
+        upperBound="-1" eType="#//Repuesto" eOpposite="#//Repuesto/Kits"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
@@ -83,7 +80,8 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Accion" ordered="false"
         unique="false" eType="#//EAccionMantenimiento"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Pieza" lowerBound="1" eType="#//Pieza"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Repuesto" lowerBound="1"
+        eType="#//Repuesto"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Marca">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -117,8 +115,8 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Anios" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TargetMantenimiento" eType="#//TargetMantenimiento"
-        eOpposite="#//TargetMantenimiento/PeriodicidadesMantenimiento"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Repuesto" eType="#//Repuesto"
+        eOpposite="#//Repuesto/PeriodicidadesMantenimiento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloVehiculo" eType="#//ModeloVehiculo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pieza" eSuperTypes="#//TargetMantenimiento">
@@ -134,13 +132,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FechaFin" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Taller" lowerBound="1"
-        eType="#//Taller"/>
+        eType="#//Taller" eOpposite="#//Taller/ServiciosMecanicos"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Vehiculo" lowerBound="1"
+        eType="#//Vehiculo" eOpposite="#//Vehiculo/ServiciosMecanicos"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Taller">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ServiciosMecanicos" upperBound="-1"
+        eType="#//ServicioMecanico" eOpposite="#//ServicioMecanico/Taller"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UbicacionPieza">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -176,9 +178,19 @@
         eOpposite="#//Usuario/Vehiculos"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioFabricacion" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ServiciosMecanicos" upperBound="-1"
+        eType="#//ServicioMecanico" eOpposite="#//ServicioMecanico/Vehiculo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EAccionMantenimiento">
     <eLiterals name="Reparacion"/>
     <eLiterals name="Reemplazo" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetMantenimiento" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
