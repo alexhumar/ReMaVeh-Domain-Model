@@ -68,9 +68,9 @@
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//ModeloVehiculo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Modelo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Version"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/Marca"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/GrupoModelo"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Moneda">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Moneda/Id"/>
@@ -127,6 +127,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TargetMantenimiento/Descripcion"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//GrupoModelo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//GrupoModelo/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//GrupoModelo/Nombre"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
