@@ -95,7 +95,6 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Version" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GrupoModelo" lowerBound="1"
         eType="#//GrupoModelo"/>
   </eClassifiers>
@@ -144,6 +143,8 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ServiciosMecanicos" upperBound="-1"
         eType="#//ServicioMecanico" eOpposite="#//ServicioMecanico/Taller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Direccion" lowerBound="1"
+        eType="#//Direccion"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UbicacionPieza">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -200,5 +201,54 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Direccion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Calle" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroCalle" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CPA" ordered="false" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Localidad" lowerBound="1"
+        eType="#//Localidad"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Localidad">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Partido" lowerBound="1"
+        eType="#//Partido" eOpposite="#//Partido/Localidades"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Partido">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Provincia" lowerBound="1"
+        eType="#//Provincia" eOpposite="#//Provincia/Partidos"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Localidades" upperBound="-1"
+        eType="#//Localidad" eOpposite="#//Localidad/Partido"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provincia">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Pais" lowerBound="1" eType="#//Pais"
+        eOpposite="#//Pais/Provincias"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Partidos" upperBound="-1"
+        eType="#//Partido" eOpposite="#//Partido/Provincia"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pais">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Provincias" upperBound="-1"
+        eType="#//Provincia" eOpposite="#//Provincia/Pais"/>
   </eClassifiers>
 </ecore:EPackage>

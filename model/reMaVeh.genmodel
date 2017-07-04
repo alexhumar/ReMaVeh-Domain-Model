@@ -69,7 +69,6 @@
     <genClasses ecoreClass="reMaVeh.ecore#//ModeloVehiculo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Version"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/Marca"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/GrupoModelo"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Moneda">
@@ -100,6 +99,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Taller/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Taller/Nombre"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Taller/ServiciosMecanicos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Taller/Direccion"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//UbicacionPieza">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//UbicacionPieza/Id"/>
@@ -131,6 +131,36 @@
     <genClasses ecoreClass="reMaVeh.ecore#//GrupoModelo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//GrupoModelo/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//GrupoModelo/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//GrupoModelo/Marca"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//Direccion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/Calle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/NumeroCalle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/CPA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Direccion/Localidad"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//Localidad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Localidad/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Localidad/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Localidad/Partido"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//Partido">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Partido/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Partido/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Partido/Provincia"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Partido/Localidades"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//Provincia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Provincia/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Provincia/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Provincia/Pais"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Provincia/Partidos"/>
+    </genClasses>
+    <genClasses ecoreClass="reMaVeh.ecore#//Pais">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Pais/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Pais/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Pais/Provincias"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
