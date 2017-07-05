@@ -83,6 +83,10 @@
         unique="false" eType="#//EAccionMantenimiento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Repuesto" lowerBound="1"
         eType="#//Repuesto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Mecanico" lowerBound="1"
+        eType="#//Mecanico"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ServicioMecanico" lowerBound="1"
+        eType="#//ServicioMecanico" eOpposite="#//ServicioMecanico/Mantenimientos"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Marca">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -125,8 +129,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServicioMecanico">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Mantenimientos" upperBound="-1"
-        eType="#//Mantenimiento"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FechaInicio" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FechaFin" ordered="false"
@@ -135,6 +137,8 @@
         eType="#//Taller" eOpposite="#//Taller/ServiciosMecanicos"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Vehiculo" lowerBound="1"
         eType="#//Vehiculo" eOpposite="#//Vehiculo/ServiciosMecanicos"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Mantenimientos" upperBound="-1"
+        eType="#//Mantenimiento" eOpposite="#//Mantenimiento/ServicioMecanico"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Taller">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -145,6 +149,8 @@
         eType="#//ServicioMecanico" eOpposite="#//ServicioMecanico/Taller"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Direccion" lowerBound="1"
         eType="#//Direccion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Mecanicos" upperBound="-1"
+        eType="#//Mecanico" eOpposite="#//Mecanico/Talleres"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UbicacionPieza">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -158,16 +164,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Inferior" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Usuario">
+  <eClassifiers xsi:type="ecore:EClass" name="Usuario" eSuperTypes="#//Persona">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Vehiculos" upperBound="-1"
         eType="#//Vehiculo" eOpposite="#//Vehiculo/Usuario"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Apellido" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DNI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vehiculo" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -250,5 +249,28 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Provincias" upperBound="-1"
         eType="#//Provincia" eOpposite="#//Provincia/Pais"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Persona" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Apellido" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroDocumento" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoDocumento" lowerBound="1"
+        eType="#//TipoDocumento"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TipoDocumento">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mecanico" eSuperTypes="#//Persona">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Talleres" upperBound="-1"
+        eType="#//Taller" eOpposite="#//Taller/Mecanicos"/>
   </eClassifiers>
 </ecore:EPackage>
