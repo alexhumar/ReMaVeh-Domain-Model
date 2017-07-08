@@ -25,15 +25,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Automovil" eSuperTypes="#//Vehiculo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Patente" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroChasis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CombustibleRecomendado"
-        eType="#//Combustible"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CodigoColorPintura" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PresionNeumaticosRecomendada"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Airbags" eType="#//EquipamientoAirbags"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RepuestosRecomendados"
-        upperBound="-1" eType="#//Repuesto"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="AceiteRecomendado" eType="#//Aceite"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Combustible">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -106,6 +98,16 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GrupoModelo" lowerBound="1"
         eType="#//GrupoModelo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CombustibleRecomendado"
+        eType="#//Combustible"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Airbags" eType="#//EquipamientoAirbags"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AceiteRecomendado" eType="#//Aceite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RepuestosRecomendados"
+        upperBound="-1" eType="#//Repuesto"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PresionNeumaticosRecomendada"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PresionesNeumaticos" upperBound="-1"
+        eType="#//PresionNeumaticos" eOpposite="#//PresionNeumaticos/ModeloVehiculo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Moneda">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -265,6 +267,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroDocumento" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="TipoDocumento" lowerBound="1"
         eType="#//TipoDocumento"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Telefonos" upperBound="-1"
+        eType="#//Telefono" eOpposite="#//Telefono/Persona"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TipoDocumento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -285,5 +289,48 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Telefono">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Numero" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoTelefono" lowerBound="1"
+        eType="#//TipoTelefono"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Persona" lowerBound="1"
+        eType="#//Persona" eOpposite="#//Persona/Telefonos"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TipoTelefono">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PresionNeumaticos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Neumatico" lowerBound="1"
+        eType="#//Neumatico"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloVehiculo" lowerBound="1"
+        eType="#//ModeloVehiculo" eOpposite="#//ModeloVehiculo/PresionesNeumaticos"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaDelantera" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaTrasera" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Neumatico">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Modelo" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Talon" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rodado" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Ancho" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
   </eClassifiers>
 </ecore:EPackage>
