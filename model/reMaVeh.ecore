@@ -20,12 +20,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroChasis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CodigoColorPintura" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Combustible">
+  <eClassifiers xsi:type="ecore:EClass" name="FuenteEnergia">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Tipo" lowerBound="1" eType="#//TipoCombustible"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Tipo" lowerBound="1" eType="#//TipoFuenteEnergia"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" eType="#//Marca"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Costo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -89,14 +90,16 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GrupoModelo" lowerBound="1"
         eType="#//GrupoModelo"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CombustibleRecomendado"
-        eType="#//Combustible"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FuenteEnergiaRecomendada"
+        eType="#//FuenteEnergia"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Airbags" eType="#//EquipamientoAirbags"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AceiteRecomendado" eType="#//Aceite"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RepuestosRecomendados"
         upperBound="-1" eType="#//Repuesto"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PresionesNeumaticos" upperBound="-1"
         eType="#//PresionNeumaticos" eOpposite="#//PresionNeumaticos/ModeloVehiculo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoCombustible" lowerBound="1"
+        eType="#//TipoFuenteEnergia"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Moneda">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -117,8 +120,8 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Anios" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Repuesto" eType="#//Repuesto"
-        eOpposite="#//Repuesto/PeriodicidadesMantenimiento"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Repuesto" lowerBound="1"
+        eType="#//Repuesto" eOpposite="#//Repuesto/PeriodicidadesMantenimiento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloVehiculo" eType="#//ModeloVehiculo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EsDefault" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -215,8 +218,6 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumeroCalle" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CPA" ordered="false" unique="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Localidad" lowerBound="1"
         eType="#//Localidad"/>
   </eClassifiers>
@@ -227,6 +228,8 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Partido" lowerBound="1"
         eType="#//Partido" eOpposite="#//Partido/Localidades"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CPA" ordered="false" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Partido">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -281,7 +284,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EntidadesReparadoras" upperBound="-1"
         eType="#//EntidadReparadora" eOpposite="#//EntidadReparadora/Reparadores"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TipoCombustible">
+  <eClassifiers xsi:type="ecore:EClass" name="TipoFuenteEnergia">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
@@ -310,14 +313,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="PresionNeumaticos">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Neumatico" lowerBound="1"
-        eType="#//Neumatico"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Neumatico" eType="#//Neumatico"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloVehiculo" lowerBound="1"
         eType="#//ModeloVehiculo" eOpposite="#//ModeloVehiculo/PresionesNeumaticos"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaDelantera" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaTrasera" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EsDefault" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Neumatico">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"

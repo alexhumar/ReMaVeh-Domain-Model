@@ -23,10 +23,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Automovil/NumeroChasis"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Automovil/CodigoColorPintura"/>
     </genClasses>
-    <genClasses ecoreClass="reMaVeh.ecore#//Combustible">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Combustible/Id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Combustible/Nombre"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Combustible/Tipo"/>
+    <genClasses ecoreClass="reMaVeh.ecore#//FuenteEnergia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//FuenteEnergia/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//FuenteEnergia/Nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//FuenteEnergia/Tipo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//FuenteEnergia/Marca"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Costo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Costo/Id"/>
@@ -65,11 +66,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//ModeloVehiculo/Version"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/GrupoModelo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/CombustibleRecomendado"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/FuenteEnergiaRecomendada"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/Airbags"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/AceiteRecomendado"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/RepuestosRecomendados"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/PresionesNeumaticos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//ModeloVehiculo/TipoCombustible"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Moneda">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Moneda/Id"/>
@@ -139,13 +141,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/Calle"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/NumeroCalle"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Direccion/CPA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Direccion/Localidad"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Localidad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Localidad/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Localidad/Nombre"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Localidad/Partido"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Localidad/CPA"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Partido">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Partido/Id"/>
@@ -180,10 +182,10 @@
     <genClasses ecoreClass="reMaVeh.ecore#//Reparador">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//Reparador/EntidadesReparadoras"/>
     </genClasses>
-    <genClasses ecoreClass="reMaVeh.ecore#//TipoCombustible">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoCombustible/Id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoCombustible/Nombre"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoCombustible/Descripcion"/>
+    <genClasses ecoreClass="reMaVeh.ecore#//TipoFuenteEnergia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoFuenteEnergia/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoFuenteEnergia/Nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//TipoFuenteEnergia/Descripcion"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Telefono">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Telefono/Id"/>
@@ -202,6 +204,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference reMaVeh.ecore#//PresionNeumaticos/ModeloVehiculo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PresionNeumaticos/RuedaDelantera"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PresionNeumaticos/RuedaTrasera"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//PresionNeumaticos/EsDefault"/>
     </genClasses>
     <genClasses ecoreClass="reMaVeh.ecore#//Neumatico">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute reMaVeh.ecore#//Neumatico/Id"/>
