@@ -59,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Descripcion" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Recambios" lowerBound="1"
-        upperBound="-1" eType="#//Recambio" eOpposite="#//Recambio/Kit"/>
+        upperBound="-1" eType="#//Recambio" eOpposite="#//Recambio/Kits"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mantenimiento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -96,9 +96,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="AceiteRecomendado" eType="#//Aceite"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RepuestosRecomendados"
         upperBound="-1" eType="#//Repuesto"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="PresionesNeumaticos" upperBound="-1"
-        eType="#//PresionNeumaticos" eOpposite="#//PresionNeumaticos/ModeloVehiculo"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoCombustible" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PresionesNeumaticosRecomendadas"
+        upperBound="-1" eType="#//PresionNeumaticos" eOpposite="#//PresionNeumaticos/ModeloVehiculo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoFuenteEnergia" lowerBound="1"
         eType="#//TipoFuenteEnergia"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Moneda">
@@ -297,8 +297,7 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Numero" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TipoTelefono" lowerBound="1"
-        eType="#//TipoTelefono"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Tipo" lowerBound="1" eType="#//TipoTelefono"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Persona" lowerBound="1"
         eType="#//Persona" eOpposite="#//Persona/Telefonos"/>
   </eClassifiers>
@@ -315,10 +314,10 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Neumatico" eType="#//Neumatico"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloVehiculo" lowerBound="1"
-        eType="#//ModeloVehiculo" eOpposite="#//ModeloVehiculo/PresionesNeumaticos"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaDelantera" ordered="false"
+        eType="#//ModeloVehiculo" eOpposite="#//ModeloVehiculo/PresionesNeumaticosRecomendadas"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedasDelanteras" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedaTrasera" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuedasTraseras" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EsDefault" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -357,7 +356,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Recambio" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Kit" eType="#//Kit" eOpposite="#//Kit/Recambios"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Kits" upperBound="-1" eType="#//Kit"
+        eOpposite="#//Kit/Recambios"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
   </eClassifiers>
 </ecore:EPackage>

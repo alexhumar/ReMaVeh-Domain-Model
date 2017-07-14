@@ -1338,7 +1338,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWtmI2OIEeeugKxQ9Bsgog" x="27" y="20"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_YWtmJGOIEeeugKxQ9Bsgog" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWtmJWOIEeeugKxQ9Bsgog" x="22" y="90"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWtmJWOIEeeugKxQ9Bsgog" x="17" y="57"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_YWs_EWOIEeeugKxQ9Bsgog" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_YWs_EmOIEeeugKxQ9Bsgog" fontName="Segoe UI" fontHeight="8"/>
@@ -1463,7 +1463,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_opGetWV5EeeCe7qwoPvD_g" x="3" y="-39"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_opGetmV5EeeCe7qwoPvD_g" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_opGet2V5EeeCe7qwoPvD_g" x="-24" y="28"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_opGet2V5EeeCe7qwoPvD_g" x="-24" y="41"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_opGeuGV5EeeCe7qwoPvD_g" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_opGeuWV5EeeCe7qwoPvD_g" x="-88" y="21"/>
@@ -3027,9 +3027,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Vr_CEGOEEeeugKxQ9Bsgog" name="[1..1] TipoTelefono" sourceNode="_BDD2QGOEEeeugKxQ9Bsgog" targetNode="_KNJAMGOEEeeugKxQ9Bsgog">
-      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//Telefono/TipoTelefono"/>
-      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//Telefono/TipoTelefono"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Vr_CEGOEEeeugKxQ9Bsgog" name="[1..1] Tipo" sourceNode="_BDD2QGOEEeeugKxQ9Bsgog" targetNode="_KNJAMGOEEeeugKxQ9Bsgog">
+      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//Telefono/Tipo"/>
+      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//Telefono/Tipo"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_YCQV4GOEEeeugKxQ9Bsgog" description="_AF7awFX-EeeKQKXhxC2JQQ" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_YCQV4WOEEeeugKxQ9Bsgog" showIcon="false">
           <labelFormat>bold</labelFormat>
@@ -3064,17 +3064,17 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jKTrkGOIEeeugKxQ9Bsgog" name="RuedaDelantera : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedaDelantera"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedaDelantera"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jKTrkGOIEeeugKxQ9Bsgog" name="RuedasDelanteras : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedasDelanteras"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedasDelanteras"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qE-XoGOIEeeugKxQ9Bsgog" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_rh4agGOIEeeugKxQ9Bsgog" name="RuedaTrasera : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedaTrasera"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedaTrasera"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_rh4agGOIEeeugKxQ9Bsgog" name="RuedasTraseras : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedasTraseras"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="reMaVeh.ecore#//PresionNeumaticos/RuedasTraseras"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_updPcGOIEeeugKxQ9Bsgog" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -3147,10 +3147,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_YWI-YGOIEeeugKxQ9Bsgog" sourceNode="_n2TMoFW-EeeCfvZ3LeS6uw" targetNode="_rwf6wGOHEeeugKxQ9Bsgog" beginLabel="[1..1] ModeloVehiculo" endLabel="[0..*] PresionesNeumaticos">
-      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/PresionesNeumaticos"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_YWI-YGOIEeeugKxQ9Bsgog" sourceNode="_n2TMoFW-EeeCfvZ3LeS6uw" targetNode="_rwf6wGOHEeeugKxQ9Bsgog" beginLabel="[1..1] ModeloVehiculo" endLabel="[0..*] PresionesNeumaticosRecomendadas">
+      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/PresionesNeumaticosRecomendadas"/>
       <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//PresionNeumaticos/ModeloVehiculo"/>
-      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/PresionesNeumaticos"/>
+      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/PresionesNeumaticosRecomendadas"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_4hlyMGOIEeeugKxQ9Bsgog" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_4hlyMWOIEeeugKxQ9Bsgog" showIcon="false"/>
@@ -3313,9 +3313,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_oonWgGV5EeeCe7qwoPvD_g" sourceNode="_fvePcFW-EeeCfvZ3LeS6uw" targetNode="_EzGEsGV5EeeCe7qwoPvD_g" beginLabel="[0..1] Kit" endLabel="[1..*] Recambios">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_oonWgGV5EeeCe7qwoPvD_g" sourceNode="_fvePcFW-EeeCfvZ3LeS6uw" targetNode="_EzGEsGV5EeeCe7qwoPvD_g" beginLabel="[0..*] Kits" endLabel="[1..*] Recambios">
       <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//Kit/Recambios"/>
-      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//Recambio/Kit"/>
+      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//Recambio/Kits"/>
       <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//Kit/Recambios"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_um0aUGV5EeeCe7qwoPvD_g" description="_jkYOUFbYEeepAoVO8d45dw" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_um0aUWV5EeeCe7qwoPvD_g" showIcon="false">
@@ -3341,9 +3341,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ESn10GijEeeC4tgvL5Nk5g" name="[1..1] TipoCombustible" sourceNode="_n2TMoFW-EeeCfvZ3LeS6uw" targetNode="_AxZioGHQEeeNx-yTSQSPGA">
-      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/TipoCombustible"/>
-      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/TipoCombustible"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ESn10GijEeeC4tgvL5Nk5g" name="[1..1] TipoFuenteEnergia" sourceNode="_n2TMoFW-EeeCfvZ3LeS6uw" targetNode="_AxZioGHQEeeNx-yTSQSPGA">
+      <target xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/TipoFuenteEnergia"/>
+      <semanticElements xmi:type="ecore:EReference" href="reMaVeh.ecore#//ModeloVehiculo/TipoFuenteEnergia"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GW4MkGijEeeC4tgvL5Nk5g" description="_AF7awFX-EeeKQKXhxC2JQQ" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GW4MkWijEeeC4tgvL5Nk5g" showIcon="false">
           <labelFormat>bold</labelFormat>
