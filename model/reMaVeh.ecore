@@ -28,14 +28,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Tipo" lowerBound="1" eType="#//TipoFuenteEnergia"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" eType="#//Marca"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Costo">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
-        changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Monto" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Moneda" lowerBound="1"
-        eType="#//Moneda"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EquipamientoAirbags">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
@@ -72,8 +64,10 @@
         eType="#//Reparador"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ServicioReparador" lowerBound="1"
         eType="#//ServicioReparador" eOpposite="#//ServicioReparador/Mantenimientos"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CostoRecambio" lowerBound="1"
-        eType="#//Costo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MontoRecambio" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MonedaMontoRecambio" lowerBound="1"
+        eType="#//Moneda"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Marca">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -106,8 +100,6 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="TiposCambio" upperBound="-1"
-        eType="#//TipoCambio" eOpposite="#//TipoCambio/Moneda"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PeriodicidadMantenimiento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -144,8 +136,10 @@
         eType="#//Mantenimiento" eOpposite="#//Mantenimiento/ServicioReparador"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="KilometrajeVehiculo" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CostoManoObra" lowerBound="1"
-        eType="#//Costo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MontoManoObra" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MonedaMontoManoObra" lowerBound="1"
+        eType="#//Moneda"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntidadReparadora">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -344,14 +338,17 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TipoCambio">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Moneda" lowerBound="1"
-        eType="#//Moneda" eOpposite="#//Moneda/TiposCambio"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         changeable="false" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Valor" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CoeficienteCambio" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="1.0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Fecha" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MonedaOrigen" lowerBound="1"
+        eType="#//Moneda"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MonedaDestino" lowerBound="1"
+        eType="#//Moneda"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Recambio" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
