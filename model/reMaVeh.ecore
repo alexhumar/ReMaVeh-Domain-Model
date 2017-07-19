@@ -317,13 +317,21 @@
         changeable="false" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Modelo" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Talon" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rodado" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Ancho" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tipo" ordered="false" unique="false"
+        eType="#//ETipoVehiculoNeumatico"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ConstruccionCarcasa" ordered="false"
+        unique="false" eType="#//EConstruccionCarcasaNeumatico"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RelacionAnchoAlto" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DiametroLLanta" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnchuraSeccionalNominal"
+        ordered="false" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IndiceCarga" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IndiceVelocidad" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TipoEntidadReparadora">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -352,5 +360,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Kits" upperBound="-1" eType="#//Kit"
         eOpposite="#//Kit/Recambios"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Marca" lowerBound="1" eType="#//Marca"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ETipoVehiculoNeumatico">
+    <eLiterals name="Pasajero"/>
+    <eLiterals name="CamionLigero" value="1"/>
+    <eLiterals name="TrailerEspecial" value="2"/>
+    <eLiterals name="UsoTemporal" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EConstruccionCarcasaNeumatico">
+    <eLiterals name="CintasOpuestas"/>
+    <eLiterals name="Diagonal" value="1"/>
+    <eLiterals name="Radial" value="2"/>
   </eClassifiers>
 </ecore:EPackage>
